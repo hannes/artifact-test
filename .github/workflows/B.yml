@@ -21,17 +21,19 @@ jobs:
       with:
         workflow_file: A1.yml
         artifact: a1-j1
+        github_token: ${{ secrets.GH_TOKEN }}
 
     - uses: ./.github/actions/download_artifact
       with:
         workflow_file: A1.yml
         artifact: a1-j2
+        github_token: ${{ secrets.GH_TOKEN }}
 
     - uses: ./.github/actions/download_artifact
       with:
         workflow_file: A2.yml
         artifact: a2-j1
-
+        github_token: ${{ secrets.GH_TOKEN }}
 
     - name: Display structure of downloaded files
       run: ls -R

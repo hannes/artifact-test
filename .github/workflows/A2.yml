@@ -11,6 +11,10 @@ jobs:
       shell: bash
       run: echo "a2-j1" > a2-j1-artifact
 
+    - name: Wait a bit
+      shell: bash
+      run: sleep 30
+
     - uses: actions/upload-artifact@v2
       with:
         name: a2-j1

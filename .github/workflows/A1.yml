@@ -15,3 +15,17 @@ jobs:
       with:
         name: a1-j1
         path: a1-j1-artifact
+
+ a1-j2:
+    name: A1-J2
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Create Artifact
+      shell: bash
+      run: echo "a1-j2" > a1-j2-artifact
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: a1-j2
+        path: a1-j2-artifact

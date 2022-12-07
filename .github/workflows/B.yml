@@ -1,0 +1,36 @@
+name: B
+
+on:
+  trigger_a1:
+  name: Trigger A1
+    on:
+    workflow_run:
+      workflows: [A1]
+      branches: [main]
+      types: 
+        - completed
+    
+  trigger_a2:
+  name: Trigger A2
+    on:
+    workflow_run:
+      workflows: [A2]
+      branches: [main]
+      types: 
+        - completed
+          
+jobs:   
+  combine:
+    name: Combine
+    if: ${{ github.event.trigger_a1.conclusion == 'success' && github.event.trigger_a2.conclusion == 'success' }}
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: my-artifact
+          
+      - name: Display structure of downloaded files
+        run: ls -R

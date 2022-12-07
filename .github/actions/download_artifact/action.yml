@@ -1,0 +1,20 @@
+name: "Download artifact"
+description: "Download an artifact"
+inputs:
+  workflow_file:
+    description: 'Name of the worklow file'
+  artifact:
+    description: 'Name of the artifact'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Download artifact
+      uses: dawidd6/action-download-artifact@v2
+      with:
+        workflow: ${{ inputs.workflow_filename }}
+        name: ${{ inputs.artifact_name }}
+        path: ${{ inputs.artifact_name }}
+        commit: ${{ github.sha }}
+        github_token: ${{ secrets.GH_TOKEN }}
+        if_no_artifact_found: ignore

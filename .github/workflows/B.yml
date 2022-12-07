@@ -10,39 +10,27 @@ on:
 jobs:   
   combine:
     name: Combine
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+# kind of irrelevant if we have to check if the file is there anyway
+# if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     runs-on: ubuntu-latest
     steps:
 
-    - name: Download artifact A1J1
-      uses: dawidd6/action-download-artifact@v2
+    - uses: ./.github/actions/download_artifact
       with:
-        workflow: A1.yml
-        name: a1-j1
-        path: a1-j1
-        commit: ${{ github.sha }}
-        github_token: ${{ secrets.GH_TOKEN }}
-        if_no_artifact_found: ignore
+        workflow_file: A1.yml
+        artifact: a1-j1
 
-    - name: Download artifact A1J2
-      uses: dawidd6/action-download-artifact@v2
+    - uses: ./.github/actions/download_artifact
       with:
-        workflow: A1.yml
-        name: a1-j2
-        path: a1-j2
-        commit: ${{ github.sha }}
-        github_token: ${{ secrets.GH_TOKEN }}
-        if_no_artifact_found: ignore
+        workflow_file: A1.yml
+        artifact: a1-j2
 
-    - name: Download artifact A2J1
-      uses: dawidd6/action-download-artifact@v2
+    - uses: ./.github/actions/download_artifact
       with:
-        workflow: A2.yml 
-        path: a2-j1
-        commit: ${{ github.sha }}
-        github_token: ${{ secrets.GH_TOKEN }}
-        if_no_artifact_found: ignore
+        workflow_file: A2.yml
+        artifact: a2-j1
+
 
     - name: Display structure of downloaded files
       run: ls -R

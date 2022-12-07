@@ -5,6 +5,8 @@ inputs:
     description: 'Name of the worklow file'
   artifact:
     description: 'Name of the artifact'
+  github_token:
+    description: 'GH Token'
 
 runs:
   using: "composite"
@@ -16,5 +18,5 @@ runs:
         name: ${{ inputs.artifact_name }}
         path: ${{ inputs.artifact_name }}
         commit: ${{ github.sha }}
-        github_token: ${{ secrets.GH_TOKEN }}
+        github_token: ${{ inputs.github_token }}
         if_no_artifact_found: ignore

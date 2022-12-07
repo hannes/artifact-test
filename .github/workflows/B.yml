@@ -28,8 +28,8 @@ jobs:
       uses: dawidd6/action-download-artifact@v2
       with:
         workflow: A1.yml
-        name: a2-j1
-        path: a2-j1
+        name: a1-j2
+        path: a1-j2
         github_token: ${{ secrets.GH_TOKEN }}
         if_no_artifact_found: ignore
 

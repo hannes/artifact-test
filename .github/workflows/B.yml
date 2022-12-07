@@ -18,12 +18,12 @@ jobs:
     - name: Download artifact A1
       uses: dawidd6/action-download-artifact@v2
       with:
-        workflow: a1.yml  
+        workflow: A1
 
     - name: Download artifact A2
       uses: dawidd6/action-download-artifact@v2
       with:
-        workflow: a2.yml  
+        workflow: A2 
 
     - name: Display structure of downloaded files
       run: ls -R

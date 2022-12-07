@@ -19,11 +19,15 @@ jobs:
       uses: dawidd6/action-download-artifact@v2
       with:
         workflow: A1
+        github_token: ${{ secrets.GH_TOKEN }}
+        if_no_artifact_found: ignore
 
     - name: Download artifact A2
       uses: dawidd6/action-download-artifact@v2
       with:
         workflow: A2 
+        github_token: ${{ secrets.GH_TOKEN }}
+        if_no_artifact_found: ignore
 
     - name: Display structure of downloaded files
       run: ls -R

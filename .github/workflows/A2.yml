@@ -13,7 +13,7 @@ jobs:
 
     - name: Wait a bit
       shell: bash
-      run: sleep 30
+      run: sleep 60
 
     - uses: actions/upload-artifact@v2
       with:

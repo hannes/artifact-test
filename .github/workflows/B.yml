@@ -37,7 +37,7 @@ jobs:
     - name: Download artifact A2J1
       uses: dawidd6/action-download-artifact@v2
       with:
-        workflow: A2 
+        workflow: A2.yml 
         path: a2-j1
         github_token: ${{ secrets.GH_TOKEN }}
         if_no_artifact_found: ignore

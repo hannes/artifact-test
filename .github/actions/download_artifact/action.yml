@@ -14,9 +14,9 @@ runs:
     - name: Download artifact
       uses: dawidd6/action-download-artifact@v2
       with:
-        workflow: ${{ inputs.workflow_filename }}
-        name: ${{ inputs.artifact_name }}
-        path: ${{ inputs.artifact_name }}
+        workflow: ${{ inputs.workflow_file }}
+        name: ${{ inputs.artifact }}
+        path: ${{ inputs.artifact }}
         commit: ${{ github.sha }}
         github_token: ${{ inputs.github_token }}
         if_no_artifact_found: ignore

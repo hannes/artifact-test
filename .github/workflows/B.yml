@@ -39,6 +39,6 @@ jobs:
       shell: bash
       run: |
         ls -R
-        if [ -f a1-j1/a1-j1-artifact ] && [ -f a1-j2/a1-j2-artifact ] && [ -f a2-j2/a2-j2-artifact ]; then
+        if [ -f a1-j1/a1-j1-artifact ] && [ -f a1-j2/a1-j2-artifact ] && [ -f a2-j1/a2-j1-artifact ]; then
             echo "all well"
         fi

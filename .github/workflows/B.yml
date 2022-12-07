@@ -4,20 +4,20 @@ on:
   trigger_a1:
   name: Trigger A1
     on:
-    workflow_run:
-      workflows: [A1]
-      branches: [main]
-      types: 
-        - completed
+      workflow_run:
+        workflows: [A1]
+        branches: [main]
+        types: 
+          - completed
     
   trigger_a2:
   name: Trigger A2
     on:
-    workflow_run:
-      workflows: [A2]
-      branches: [main]
-      types: 
-        - completed
+      workflow_run:
+        workflows: [A2]
+        branches: [main]
+        types: 
+          - completed
           
 jobs:   
   combine:

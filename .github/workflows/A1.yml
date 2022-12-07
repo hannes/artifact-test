@@ -1,0 +1,17 @@
+name: A1
+on: [push]
+
+jobs:
+ a1-j1:
+    name: A1-J1
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Create Artifact
+      shell: bash
+      run: echo "a1-j1" > a1-j1-artifact
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: a1-j1
+        path: a1-j1-artifact

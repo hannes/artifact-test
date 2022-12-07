@@ -18,7 +18,7 @@ jobs:
     - name: Download artifact A1J1
       uses: dawidd6/action-download-artifact@v2
       with:
-        workflow: A1.yml
+      #  workflow: A1.yml
         name: a1-j1
         path: a1-j1
         run_id: ${{ github.run_id }}
@@ -28,7 +28,7 @@ jobs:
     - name: Download artifact A1J2
       uses: dawidd6/action-download-artifact@v2
       with:
-        workflow: A1.yml
+     #   workflow: A1.yml
         name: a1-j2
         path: a1-j2
         run_id: ${{ github.run_id }}
@@ -39,7 +39,7 @@ jobs:
     - name: Download artifact A2J1
       uses: dawidd6/action-download-artifact@v2
       with:
-        workflow: A2.yml 
+      #  workflow: A2.yml 
         path: a2-j1
         run_id: ${{ github.run_id }}
         github_token: ${{ secrets.GH_TOKEN }}

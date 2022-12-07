@@ -1,14 +1,8 @@
 name: B
 
 on:
-  trigger_a1:
-    workflows: [A1]
-    branches: [main]
-    types: 
-      - completed
-  
-  trigger_a2:
-    workflows: [A2]
+  workflow_run:
+    workflows: [A1, A2]
     branches: [main]
     types: 
       - completed
@@ -16,7 +10,7 @@ on:
 jobs:   
   combine:
     name: Combine
-    if: ${{ github.event.trigger_a1.conclusion == 'success' && github.event.trigger_a2.conclusion == 'success' }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     runs-on: ubuntu-latest
     steps:

@@ -15,19 +15,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - name: Download artifact A1
+    - name: Download artifact A1J1
       uses: dawidd6/action-download-artifact@v2
       with:
         workflow: A1.yml
         name: a1-j1
+        path: a1-j1
         github_token: ${{ secrets.GH_TOKEN }}
         if_no_artifact_found: ignore
 
-    - name: Download artifact A2
+    - name: Download artifact A1J2
       uses: dawidd6/action-download-artifact@v2
       with:
-        workflow: A2.yml
+        workflow: A1.yml
         name: a2-j1
+        path: a2-j1
+        github_token: ${{ secrets.GH_TOKEN }}
+        if_no_artifact_found: ignore
+
+
+    - name: Download artifact A2J1
+      uses: dawidd6/action-download-artifact@v2
+      with:
+        workflow: A2 
+        path: a2-j1
         github_token: ${{ secrets.GH_TOKEN }}
         if_no_artifact_found: ignore
 

@@ -18,7 +18,7 @@ jobs:
     - name: Download artifact A1
       uses: dawidd6/action-download-artifact@v2
       with:
-        workflow: A1
+        workflow: A1.yml
         name: a1-j1
         github_token: ${{ secrets.GH_TOKEN }}
         if_no_artifact_found: ignore
@@ -26,7 +26,7 @@ jobs:
     - name: Download artifact A2
       uses: dawidd6/action-download-artifact@v2
       with:
-        workflow: A2 
+        workflow: A2.yml
         name: a2-j1
         github_token: ${{ secrets.GH_TOKEN }}
         if_no_artifact_found: ignore

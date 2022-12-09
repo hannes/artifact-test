@@ -32,7 +32,7 @@ jobs:
 
 
 
-  combine-local:
+ combine-local:
     needs: [a1-j2, a1-j2]
     name: Combine Local
 

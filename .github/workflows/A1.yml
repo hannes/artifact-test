@@ -43,10 +43,12 @@ jobs:
     - uses: actions/download-artifact@v2
       with:
         name: a1-j1
+        path: a1-j1
 
     - uses: actions/download-artifact@v2
       with:
         name: a1-j2
+        path: a1-j2
 
     - name: Display structure of downloaded files
       shell: bash

@@ -29,3 +29,29 @@ jobs:
       with:
         name: a1-j2
         path: a1-j2-artifact
+
+
+
+  combine-local:
+    needs: [a1-j2, a1-j2]
+    name: Combine Local
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - uses: actions/download-artifact@v2
+      with:
+        name: a1-j1
+
+    - uses: actions/download-artifact@v2
+      with:
+        name: a1-j2
+
+    - name: Display structure of downloaded files
+      shell: bash
+      run: |
+        ls -R
+        if [ -f a1-j1/a1-j1-artifact ] && [ -f a1-j2/a1-j2-artifact ]; then
+            echo "all well"
+        fi

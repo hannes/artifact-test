@@ -33,7 +33,7 @@ jobs:
 
 
  combine-local:
-    needs: [a1-j2, a1-j2]
+    needs: [a1-j1, a1-j2]
     name: Combine Local
 
     runs-on: ubuntu-latest
